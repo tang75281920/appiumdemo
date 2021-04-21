@@ -5,6 +5,11 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 
+"""
+04：
+编写脚本时，常用的3种等待方式
+"""
+
 
 class TestDemo:
     def setup(self):

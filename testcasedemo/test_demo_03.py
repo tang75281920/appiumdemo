@@ -1,5 +1,9 @@
 from appium import webdriver
 
+"""
+03：
+引入pytest，将测试脚本更改成测试测试用例的形式
+"""
 
 class TestDemo:
     def setup(self):

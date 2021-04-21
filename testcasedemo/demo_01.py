@@ -3,7 +3,8 @@ from time import sleep
 from appium import webdriver
 
 '''
-最初级的appium的测试用例
+01：
+最初级的appium的测试脚本，打开APP，并且点击元素
 '''
 
 desired_caps = {}

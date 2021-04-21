@@ -1,10 +1,11 @@
+from appium import webdriver
+
 """
+02：
 使用Appium Desktop录制的脚本：
 使用小米系统拨号，拨打10086
 博客：https://blog.csdn.net/tt75281920/article/details/115646935?spm=1001.2014.3001.5501
 """
-
-from appium import webdriver
 
 caps = {}
 caps["platformName"] = "Android"
