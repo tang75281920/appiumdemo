@@ -27,12 +27,14 @@ class TestDemo:
         self.driver.implicitly_wait(10)
 
     def test_demo_1(self):
-        # 找到第一个textview
+        # 通过className定位
+        # 定位到第二个textview
         self.driver.find_element_by_android_uiautomator(
             'new UiSelector().className("android.widget.TextView").instance(1)').click()
 
     def test_demo_2(self):
-        # 通过文本查找元素
+        # 通过text定位
+        # 定位到第一个文本属性为‘Animation’的元素
         self.driver.find_element_by_android_uiautomator('new UiSelector().text("Animation")').click()
 
     def test_demo_3(self):
@@ -50,4 +52,5 @@ class TestDemo:
         sleep(19)
 
     def teardown(self):
+        sleep(5)
         self.driver.quit()
