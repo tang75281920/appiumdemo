@@ -42,14 +42,12 @@ class TestDemo:
         # 使用（找到的第一个）滚动元素，一直滑动至（通过文本定位的）'Tabs'元素出现
         self.driver.find_element_by_android_uiautomator(
             'new UiScrollable(new UiSelector().scrollable(true).instance(0)).getChildByText(new UiSelector().className("android.widget.TextView"), "Tabs")').click()
-        sleep(19)
 
     def test_demo_4(self):
         self.driver.find_element_by_android_uiautomator('new UiSelector().text("Views")').click()
         # 通过找到的第一个滚动元素，滚动定位到第一个文本为'Popup Menu'元素
         self.driver.find_element_by_android_uiautomator(
             'new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().text("Popup Menu").instance(0));').click()
-        sleep(19)
 
     def teardown(self):
         sleep(5)
