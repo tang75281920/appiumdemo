@@ -29,11 +29,15 @@ class TestDemo:
         print(self.driver.contexts)  # 打印所有的context
         self.driver.find_element_by_xpath('//*[@text="社会我王哥"]').click()
 
-        for i in range(5): print(self.driver.contexts)
-
-        webview = self.driver.contexts[-1]
-        self.driver.switch_to.context(webview)  # 切换到webview
+        #webview = self.driver.contexts[-1]
+        #self.driver.switch_to.context(webview)  # 切换到webview
         print(self.driver.context)  # 打印当前context
+
+        # 通父控件定位子控件，点击首页的果园
+        self.driver.find_element_by_xpath('//*[@resource-id="com.planet.light2345:id/llFunc"]/android.widget.ImageView[1]').click()
+
+
+
 
         self.driver.switch_to.context(self.driver.contexts[0])  # 切回native
         print(self.driver.context)  # 打印当前context
