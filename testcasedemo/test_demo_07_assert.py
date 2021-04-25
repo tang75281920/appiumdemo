@@ -11,7 +11,7 @@ demo下载：
 - https://github.com/appium/java-client/blob/master/src/test/resources/apps/ApiDemos-debug.apk
 
 blog:
-- 
+- https://blog.csdn.net/tt75281920/article/details/116126341
 """
 
 
@@ -42,6 +42,7 @@ class TestDemo:
         assert 'Clicked popup menu item Search' in toast.text  # 断言toast文案是否为'Clicked popup menu item Search'
 
         assert len(toast.text) > 10  # 断言toast文案长度大于10
+        assert len(toast.text) > 10, 'toast字符长度不等'
         assert 'Clicked popup menu item Search' in toast.get_attribute(
             'text')  # 断言toast的text属性为'Clicked popup menu item Search'
 
