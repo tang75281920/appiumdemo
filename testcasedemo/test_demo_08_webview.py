@@ -6,7 +6,11 @@ from appium import webdriver
 08：
 对于webview的测试
 
-测试apk：雪球demo下载：
+测试apk
+- 雪球
+
+官方文档
+- http://appium.io/docs/en/writing-running-appium/web/mobile-web/
 
 blog:
 - 
