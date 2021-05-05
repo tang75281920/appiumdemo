@@ -10,27 +10,20 @@ PO模式修改前的测试脚本
 测试apk
 - 雪球
 
-基于 POM 的用例组织结构
-- page:完成对页面的封装
-- driver:完成对 Web、Android、iOS、接口的驱动 
-- testcase:调用各类 
-- page 完成业务流程并进行断言 
-- data:配置文件和数据驱动 
-- utils:其他便捷的功能封装，可选
-
 blog:
-- 
+- https://blog.csdn.net/tt75281920/article/details/116429894
 """
 
 
 class TestDemo:
     def setup(self):
-        caps = {}
-        caps['platformName'] = 'Android'
-        caps['appPackage'] = 'com.xueqiu.android'
-        caps['appActivity'] = '.view.WelcomeActivityAlias'
-        caps['noReset'] = True
-        caps['skipServerInstallation'] = True
+        caps = {
+            'platformName': 'Android',
+            'appPackage': 'com.xueqiu.android',
+            'appActivity': '.view.WelcomeActivityAlias',
+            'noReset': True,
+            'skipServerInstallation': True
+        }
 
         self.driver = webdriver.Remote('http://127.0.0.1:4723/wd/hub', caps)
         self.driver.implicitly_wait(10)
