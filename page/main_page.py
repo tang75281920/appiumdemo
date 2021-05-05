@@ -1,12 +1,12 @@
-from selenium.webdriver.remote.webdriver import WebDriver
+from selenium.webdriver.common.by import By
 
+from page.base_page import BasePage
 from page.search_page import SearchPage
 
 
-class MainPage(object):
-    def __init__(self, driver: WebDriver):
-        self.driver = driver
+class MainPage(BasePage):
+    _search_locator = (By.ID, "com.xueqiu.android:id/home_search")
 
     def to_search(self):
-        self.driver.find_element_by_id("com.xueqiu.android:id/home_search").click()  # 点击首页搜索框
+        self.find_element_and_click(self._search_locator)  # 点击首页搜索框
         return SearchPage(self.driver)

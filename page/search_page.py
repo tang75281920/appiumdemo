@@ -1,13 +1,15 @@
-from selenium.webdriver.remote.webdriver import WebDriver
+from selenium.webdriver.common.by import By
+
+from page.base_page import BasePage
 
 
-class SearchPage(object):
-    def __init__(self, driver: WebDriver):
-        self.driver = driver
+class SearchPage(BasePage):
+    _input_locator = (By.ID, "search_input_text")
+    _name_locator = (By.ID, "name")
 
     def search(self, keyword):
-        self.driver.find_element_by_id("search_input_text").send_keys(keyword)  # 输入股票代码
-        self.driver.find_element_by_id("name").click()  # 点输入联想列表的股票名称
+        self.find_element(self._input_locator).send_keys(keyword)  # 输入股票代码
+        self.find_element(self._name_locator).click()  # 点输入联想列表的股票名称
         return self
 
     def get_current_price(self):
